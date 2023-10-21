@@ -5,7 +5,8 @@ services:
     working_dir: /app
     volumes:
       - ./:/app # Mapeia todo o diretório do projeto para o contêiner
-    command: npm run dev # Comando para iniciar seu aplicativo
+    command:
+      sh -c "npm install && npm run dev" # Instalação de dependências e iniciação do aplicativo
     ports:
       - "3000:3000" # Mapeamento de porta do host para o contêiner
   nginx:
